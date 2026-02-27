@@ -405,3 +405,24 @@ p{margin:14px 0}
   }
 
 }
+
+/* EMAIL CONTACT FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.contact-form button {
+  margin-top: 10px;
+}
