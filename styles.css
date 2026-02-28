@@ -1,6 +1,6 @@
-/* =========================
-   1. BASE STYLES
-========================= */
+/* =========================================================
+   1. ROOT VARIABLES
+========================================================= */
 
 :root{
   --primary:#0000FF;
@@ -10,6 +10,11 @@
   --bg:#f7f7f7;
   --white:#ffffff;
 }
+
+
+/* =========================================================
+   2. BASE / RESET
+========================================================= */
 
 *{box-sizing:border-box;margin:0;padding:0}
 
@@ -35,9 +40,9 @@ h1,h2,h3{
 p{margin:14px 0}
 
 
-/* =========================
-   2. LAYOUT SYSTEM
-========================= */
+/* =========================================================
+   3. LAYOUT SYSTEM
+========================================================= */
 
 .container{
   width:92%;
@@ -64,11 +69,161 @@ p{margin:14px 0}
 }
 
 
-/* =========================
-   3. COMPONENTS
-========================= */
+/* =========================================================
+   4. NAVIGATION SYSTEM
+========================================================= */
+
+.nav{
+  background:var(--white);
+  border-bottom:2px solid var(--primary);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  transition:box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.nav.scrolled{
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 0;
+}
+
+.logo{
+  font-weight:700;
+  font-size:20px;
+  color:var(--primary);
+  text-decoration:none;
+  letter-spacing:0.5px;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:34px;
+  margin:0;
+  padding:0;
+}
+
+.nav-links li{
+  position:relative;
+}
+
+.nav-links a{
+  text-decoration:none;
+  font-weight:600;
+  color:var(--text);
+  padding:8px 0;
+  position:relative;
+  transition:color 0.2s ease;
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0;
+  height:2px;
+  background:var(--primary);
+  transition:width 0.25s ease;
+}
+
+.nav-links a:hover{
+  color:var(--primary);
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+.arrow{
+  font-size:12px;
+  margin-left:6px;
+}
+
+
+/* ================= DROPDOWN ================= */
+
+.dropdown{
+  position:absolute;
+  top:60px;
+  left:0;
+  min-width:260px;
+  background:var(--white);
+  border-top:3px solid var(--primary);
+  border-radius:8px;
+  box-shadow:0 14px 34px rgba(0,0,0,0.08);
+  padding:18px;
+  list-style:none;
+
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:all 0.2s ease;
+}
+
+.dropdown li{
+  margin-bottom:12px;
+}
+
+.dropdown li:last-child{
+  margin-bottom:0;
+}
+
+.dropdown a{
+  display:block;
+  padding:6px 4px;
+  font-weight:500;
+}
+
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+
+/* ================= NAV CTA ================= */
+
+.nav-cta{
+  background:var(--primary);
+  color:#fff !important;
+  padding:10px 20px;
+  border-radius:6px;
+  font-weight:700;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(0,0,255,0.25);
+}
+
+.nav-toggle{
+  display:none;
+}
+
+.nav-toggle-label{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  color:var(--primary);
+}
+
+
+/* =========================================================
+   5. COMPONENTS
+========================================================= */
 
 /* HERO */
+
 .hero{
   position:relative;
   min-height:90vh;
@@ -115,7 +270,9 @@ p{margin:14px 0}
   margin-bottom:10px;
 }
 
+
 /* BUTTON */
+
 .btn{
   display:inline-block;
   background:var(--accent);
@@ -131,7 +288,9 @@ p{margin:14px 0}
   opacity:0.9;
 }
 
+
 /* CARD */
+
 .card{
   background:var(--white);
   padding:24px;
@@ -139,7 +298,9 @@ p{margin:14px 0}
   box-shadow:0 4px 14px rgba(0,0,0,0.06);
 }
 
+
 /* FINAL CTA */
+
 .final-cta{
   text-align:center;
   padding:60px 0;
@@ -152,20 +313,8 @@ p{margin:14px 0}
   margin-bottom:20px;
 }
 
-/* FOOTER */
-.footer{
-  text-align:center;
-  padding:20px;
-  background:#111;
-  color:#fff;
-  font-size:14px;
-}
 
-
-/* FAQ SECTION */
-/* =========================
-   FAQ
-========================= */
+/* FAQ */
 
 .faq{
   margin-top:40px;
@@ -196,180 +345,53 @@ p{margin:14px 0}
   color:var(--text);
 }
 
-/* =========================
-   4. MOBILE
-========================= */
 
-@media(max-width:768px){
+/* CONTACT FORM */
 
-  .hero h1{font-size:32px}
-  .section{padding:40px 0}
-
-}
-
-
-/* =========================
-   NAVIGATION (Elite Blue Version)
-========================= */
-
-.nav{
-  background:var(--white);
-  border-bottom:2px solid var(--primary);
-  position:sticky;
-  top:0;
-  z-index:1000;
-  transition:box-shadow 0.3s ease, background 0.3s ease;
-}
-
-/* Subtle elite scroll effect */
-.nav.scrolled{
-  box-shadow:0 6px 20px rgba(0,0,0,0.08);
-}
-
-.nav-inner{
+.contact-form{
   display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:18px 0;
+  flex-direction:column;
+  gap:10px;
+  margin-top:10px;
 }
 
-.logo{
-  font-weight:700;
-  font-size:20px;
-  color:var(--primary);
-  text-decoration:none;
-  letter-spacing:0.5px;
-}
-
-.nav-links{
-  list-style:none;
-  display:flex;
-  align-items:center;
-  gap:34px;
-  margin:0;
-  padding:0;
-}
-
-.nav-links li{
-  position:relative;
-}
-
-.nav-links a{
-  text-decoration:none;
-  font-weight:600;
-  color:var(--text);
-  padding:8px 0;
-  position:relative;
-  transition:color 0.2s ease;
-}
-
-/* Elegant blue underline animation */
-.nav-links a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-4px;
-  width:0;
-  height:2px;
-  background:var(--primary);
-  transition:width 0.25s ease;
-}
-
-.nav-links a:hover{
-  color:var(--primary);
-}
-
-.nav-links a:hover::after{
+.contact-form input,
+.contact-form textarea{
+  padding:10px;
+  border:1px solid #ccc;
+  font-size:14px;
+  border-radius:4px;
   width:100%;
 }
 
-/* Dropdown arrow */
-.arrow{
-  font-size:12px;
-  margin-left:6px;
+.contact-form button{
+  margin-top:10px;
 }
 
-/* =========================
-   DROPDOWN
-========================= */
 
-.dropdown{
-  position:absolute;
-  top:60px;
-  left:0;
-  min-width:260px;
-  background:var(--white);
-  border-top:3px solid var(--primary);
-  border-radius:8px;
-  box-shadow:0 14px 34px rgba(0,0,0,0.08);
-  padding:18px;
-  list-style:none;
+/* FOOTER */
 
-  opacity:0;
-  visibility:hidden;
-  transform:translateY(10px);
-  transition:all 0.2s ease;
+.footer{
+  text-align:center;
+  padding:20px;
+  background:#111;
+  color:#fff;
+  font-size:14px;
 }
 
-.dropdown li{
-  margin-bottom:12px;
-}
 
-.dropdown li:last-child{
-  margin-bottom:0;
-}
-
-.dropdown a{
-  display:block;
-  padding:6px 4px;
-  font-weight:500;
-}
-
-.has-dropdown:hover .dropdown,
-.has-dropdown:focus-within .dropdown{
-  opacity:1;
-  visibility:visible;
-  transform:translateY(0);
-}
-
-/* =========================
-   CTA
-========================= */
-
-.nav-cta{
-  background:var(--primary);
-  color:#fff !important;
-  padding:10px 20px;
-  border-radius:6px;
-  font-weight:700;
-  transition:transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.nav-cta:hover{
-  transform:translateY(-2px);
-  box-shadow:0 6px 18px rgba(0,0,255,0.25);
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-.nav-toggle{
-  display:none;
-}
-
-.nav-toggle-label{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-  color:var(--primary);
-}
+/* =========================================================
+   6. MOBILE RESPONSIVE (ALL MOBILE RULES IN ONE PLACE)
+========================================================= */
 
 @media(max-width:768px){
 
-  .nav-toggle-label{
-    display:block;
-  }
+  /* Global */
+  .section{padding:40px 0}
+  .hero h1{font-size:32px}
+
+  /* Navigation */
+  .nav-toggle-label{display:block;}
 
   .nav-links{
     position:absolute;
@@ -406,23 +428,37 @@ p{margin:14px 0}
 
 }
 
-/* EMAIL CONTACT FORM */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
+/* =========================
+   7. TYPOGRAPHY REFINEMENT (Lean)
+========================= */
+
+/* Improve heading rhythm */
+h1,
+h2{
+  margin-bottom:18px;
+  letter-spacing:-0.3px;
+  text-align: center;
 }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  border-radius: 4px;
-  width: 100%;
+/* Slightly cleaner H2 sizing */
+h2{
+  font-size:28px;
 }
 
-.contact-form button {
-  margin-top: 10px;
+/* Mobile tightening */
+@media(max-width:768px){
+
+  h2{
+    font-size:22px;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
 }
+
