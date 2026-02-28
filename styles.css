@@ -1,464 +1,613 @@
 /* =========================================================
-   1. ROOT VARIABLES
-========================================================= */
 
+   1. ROOT VARIABLES
+
+========================================================= */
 :root{
+
   --primary:#0000FF;
+
+  --primary-dark:#0000cc;
+
   --secondary:#D9DDDC;
+
   --accent:#ffcc00;
+
   --text:#1a1a1a;
+
   --bg:#f7f7f7;
+
   --white:#ffffff;
+
+
+
+  --radius:8px;
+
+  --shadow-soft:0 10px 30px rgba(0,0,0,0.06);
+
+  --shadow-hover:0 14px 40px rgba(0,0,0,0.10);
+
 }
 
-
 /* =========================================================
-   2. BASE / RESET
+
+   2. RESET & BASE
+
 ========================================================= */
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+
+  margin:0;
+
+  padding:0;
+
+  box-sizing:border-box;
+}
 
 body{
-  font-family:Arial, Helvetica, sans-serif;
-  background:var(--bg);
+
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+
   color:var(--text);
-  line-height:1.6;
+
+  background:var(--white);
+
+  line-height:1.65;
+
+  -webkit-font-smoothing:antialiased;
+
 }
+
+
 
 img{
-  max-width:100%;
-  height:auto;
+
+  width:100%;
+
   display:block;
+
 }
 
-h1,h2,h3{
-  font-weight:700;
-  color:var(--primary);
-  line-height:1.2;
+a{
+
+  text-decoration:none;
+
+  color:inherit;
+
 }
 
-p{margin:14px 0}
+ul{
 
+  padding-left:20px;
 
-/* =========================================================
-   3. LAYOUT SYSTEM
-========================================================= */
+}
 
 .container{
-  width:92%;
+
+  width:100%;
+
   max-width:1100px;
-  margin:0 auto;
-}
 
-.section{
-  padding:60px 0;
-}
+  margin:auto;
 
-.section-light{
-  background:var(--white);
-}
+  padding:0 24px;
 
-.section-grey{
-  background:var(--secondary);
 }
-
-.grid-3{
-  display:grid;
-  gap:24px;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-}
-
 
 /* =========================================================
-   4. NAVIGATION SYSTEM
+
+   3. TYPOGRAPHY SYSTEM
+
+========================================================= */
+
+h1{
+
+  font-size:48px;
+
+  font-weight:700;
+
+  letter-spacing:-0.5px;
+
+  line-height:1.1;
+
+  margin-bottom:20px;
+
+}
+
+h2{
+
+  font-size:34px;
+
+  font-weight:700;
+
+  letter-spacing:-0.3px;
+
+  margin-bottom:24px;
+
+}
+
+h3{
+
+  font-size:20px;
+
+  font-weight:600;
+
+  margin-bottom:12px;
+
+}
+
+p{
+
+  margin-bottom:18px;
+
+  font-size:16px;
+
+  color:#444;
+
+}
+
+/* =========================================================
+
+   4. NAVIGATION (SILO STRUCTURE)
+
 ========================================================= */
 
 .nav{
-  background:var(--white);
-  border-bottom:2px solid var(--primary);
-  position:sticky;
-  top:0;
-  z-index:1000;
-  transition:box-shadow 0.3s ease, background 0.3s ease;
-}
 
-.nav.scrolled{
-  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+  background:var(--white);
+
+  border-bottom:1px solid rgba(0,0,0,0.06);
+
+  position:sticky;
+
+  top:0;
+
+  z-index:999;
+
 }
 
 .nav-inner{
+
   display:flex;
-  align-items:center;
+
   justify-content:space-between;
-  padding:18px 0;
+
+  align-items:center;
+
+  height:80px;
+
 }
+
 
 .logo{
+
   font-weight:700;
+
   font-size:20px;
-  color:var(--primary);
-  text-decoration:none;
-  letter-spacing:0.5px;
+
 }
 
+
 .nav-links{
+
   list-style:none;
+
   display:flex;
+
   align-items:center;
-  gap:34px;
-  margin:0;
-  padding:0;
+
+  gap:32px;
+
 }
 
 .nav-links li{
+
   position:relative;
+
 }
 
 .nav-links a{
-  text-decoration:none;
-  font-weight:600;
-  color:var(--text);
-  padding:8px 0;
-  position:relative;
-  transition:color 0.2s ease;
-}
 
-.nav-links a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-4px;
-  width:0;
-  height:2px;
-  background:var(--primary);
-  transition:width 0.25s ease;
+  font-weight:500;
+
+  transition:0.2s ease;
+
 }
 
 .nav-links a:hover{
+
   color:var(--primary);
-}
 
-.nav-links a:hover::after{
-  width:100%;
-}
-
-.arrow{
-  font-size:12px;
-  margin-left:6px;
 }
 
 
-/* ================= DROPDOWN ================= */
+/* Dropdown */
+
+.has-dropdown:hover .dropdown{
+
+  opacity:1;
+
+  visibility:visible;
+
+  transform:translateY(0);
+
+}
+
+
 
 .dropdown{
+
   position:absolute;
-  top:60px;
+
+  top:120%;
+
   left:0;
-  min-width:260px;
+
   background:var(--white);
-  border-top:3px solid var(--primary);
-  border-radius:8px;
-  box-shadow:0 14px 34px rgba(0,0,0,0.08);
-  padding:18px;
+
+  box-shadow:var(--shadow-soft);
+
+  border-radius:var(--radius);
+
+  padding:16px 0;
+
   list-style:none;
 
+  min-width:240px;
+
+
+
   opacity:0;
+
   visibility:hidden;
+
   transform:translateY(10px);
-  transition:all 0.2s ease;
+
+  transition:0.25s ease;
+
 }
 
 .dropdown li{
-  margin-bottom:12px;
+
+  padding:8px 20px;
+
 }
 
-.dropdown li:last-child{
-  margin-bottom:0;
-}
+
 
 .dropdown a{
-  display:block;
-  padding:6px 4px;
+
   font-weight:500;
-}
 
-.has-dropdown:hover .dropdown,
-.has-dropdown:focus-within .dropdown{
-  opacity:1;
-  visibility:visible;
-  transform:translateY(0);
+  display:block;
+
 }
 
 
-/* ================= NAV CTA ================= */
+
+/* CTA in nav */
 
 .nav-cta{
+
   background:var(--primary);
-  color:#fff !important;
-  padding:10px 20px;
-  border-radius:6px;
-  font-weight:700;
-  transition:transform 0.2s ease, box-shadow 0.2s ease;
+
+  color:var(--white);
+
+  padding:10px 18px;
+
+  border-radius:var(--radius);
+
 }
+
 
 .nav-cta:hover{
-  transform:translateY(-2px);
-  box-shadow:0 6px 18px rgba(0,0,255,0.25);
-}
 
-.nav-toggle{
-  display:none;
-}
+  background:var(--primary-dark);
 
-.nav-toggle-label{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-  color:var(--primary);
 }
-
 
 /* =========================================================
-   5. COMPONENTS
+
+   5. HERO
+
 ========================================================= */
-
-/* HERO */
-
 .hero{
+
   position:relative;
-  min-height:90vh;
+
+  height:85vh;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   text-align:center;
-  color:#fff;
+
+  color:var(--white);
+
   overflow:hidden;
+
 }
 
 .hero img{
+
   position:absolute;
-  inset:0;
-  width:100%;
+
+  top:0;
+
+  left:0;
+
   height:100%;
+
   object-fit:cover;
-  z-index:0;
+
+  z-index:-2;
+
 }
 
+
+
 .hero::after{
+
   content:"";
+
   position:absolute;
+
   inset:0;
-  background:rgba(0,0,0,0.55);
-  z-index:1;
+
+  background:linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.6));
+
+  z-index:-1;
+
 }
 
 .hero-content{
-  position:relative;
-  z-index:2;
-  width:92%;
-  max-width:900px;
-}
 
-.hero h1{
-  font-size:48px;
-  margin-bottom:16px;
-  color:#fff;
+  max-width:800px;
+
+  padding:0 24px;
+
 }
 
 .hero p{
+
+  color:#e5e5e5;
+
   font-size:18px;
-  margin-bottom:10px;
+
 }
 
+/* =========================================================
 
-/* BUTTON */
+   6. BUTTON SYSTEM
+
+========================================================= */
 
 .btn{
+
   display:inline-block;
+
+  margin-top:20px;
+
+  padding:14px 28px;
+
   background:var(--accent);
+
   color:#000;
-  padding:14px 22px;
-  font-weight:700;
-  text-decoration:none;
-  border-radius:6px;
-  margin-top:18px;
+
+  font-weight:600;
+
+  border-radius:var(--radius);
+
+  transition:0.25s ease;
+
 }
+
+
 
 .btn:hover{
-  opacity:0.9;
-}
 
-
-/* CARD */
-
-.card{
-  background:var(--white);
-  padding:24px;
-  border-radius:10px;
-  box-shadow:0 4px 14px rgba(0,0,0,0.06);
-}
-
-
-/* FINAL CTA */
-
-.final-cta{
-  text-align:center;
-  padding:60px 0;
-  background:var(--primary);
-  color:#fff;
-}
-
-.final-cta h2{
-  color:#fff;
-  margin-bottom:20px;
-}
-
-
-/* FAQ */
-
-.faq{
-  margin-top:40px;
-}
-
-.faq-item{
-  background:var(--white);
-  padding:22px 24px;
-  border-radius:10px;
-  box-shadow:0 4px 14px rgba(0,0,0,0.05);
-  margin-bottom:18px;
-  transition:transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.faq-item:hover{
   transform:translateY(-3px);
-  box-shadow:0 8px 22px rgba(0,0,0,0.08);
+
+  box-shadow:var(--shadow-hover);
+
 }
 
-.faq-item h3{
-  font-size:18px;
-  margin-bottom:10px;
-  color:var(--primary);
-}
+/* =========================================================
 
-.faq-item p{
-  margin:0;
-  color:var(--text);
-}
+   7. SECTION SYSTEM
 
+========================================================= */
 
-/* CONTACT FORM */
+.section{
 
-.contact-form{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  margin-top:10px;
-}
+  padding:100px 0;
 
-.contact-form input,
-.contact-form textarea{
-  padding:10px;
-  border:1px solid #ccc;
-  font-size:14px;
-  border-radius:4px;
-  width:100%;
-}
-
-.contact-form button{
-  margin-top:10px;
 }
 
 
-/* FOOTER */
+.section-light{
 
-.footer{
-  text-align:center;
-  padding:20px;
-  background:#111;
-  color:#fff;
-  font-size:14px;
+  background:var(--white);
+
+}
+
+.section-grey{
+
+  background:var(--bg);
+
+}
+
+
+/* INTERNAL LINKING SYSTEM" */
+.internal-links{
+color: #0000FF;
+font-weight: 600;
+
 }
 
 
 /* =========================================================
-   6. MOBILE RESPONSIVE (ALL MOBILE RULES IN ONE PLACE)
+
+   8. GRID & CARD SYSTEM (Premium Feel)
+
 ========================================================= */
 
+.grid-3{
+
+  display:grid;
+
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+  gap:40px;
+
+  margin-top:40px;
+
+}
+
+
+.card{
+
+  background:var(--white);
+
+  padding:40px;
+
+  border-radius:var(--radius);
+
+  box-shadow:var(--shadow-soft);
+
+  transition:0.3s ease;
+
+}
+
+
+
+.card:hover{
+
+  transform:translateY(-6px);
+
+  box-shadow:var(--shadow-hover);
+
+}
+
+
+/* =========================================================
+
+   9. FAQ
+
+========================================================= */
+
+.faq{
+
+  margin-top:40px;
+
+}
+
+.faq-item{
+
+  margin-bottom:32px;
+
+  padding-bottom:24px;
+
+  border-bottom:1px solid rgba(0,0,0,0.08);
+
+}
+
+/* =========================================================
+
+   10. FINAL CTA (Full Bleed Luxury)
+
+========================================================= */
+
+.final-cta{
+
+  background:var(--primary);
+
+  color:var(--white);
+
+  padding:120px 0;
+
+  text-align:center;
+
+}
+
+.final-cta h2{
+
+  font-size:36px;
+
+  margin-bottom:30px;
+
+  color:var(--white);
+
+}
+
+.final-cta .btn{
+
+  background:var(--accent);
+
+  color:#000;
+
+}
+
+
+/* =========================================================
+
+   11. FOOTER
+
+========================================================= */
+
+.footer{
+
+  background:#0f0f0f;
+
+  color:#aaa;
+
+  text-align:center;
+
+  padding:30px 0;
+
+  font-size:14px;
+
+}
+
+
+
+/* =========================================================
+
+   12. MOBILE UX
+
+========================================================= */
+
+
+
 @media(max-width:768px){
 
-  /* Global */
-  .section{padding:40px 0}
-  .hero h1{font-size:32px}
+  h1{
 
-  /* Navigation */
-  .nav-toggle-label{display:block;}
+    font-size:32px;
 
-  .nav-links{
-    position:absolute;
-    top:75px;
-    left:0;
-    right:0;
-    flex-direction:column;
-    align-items:flex-start;
-    background:var(--white);
-    padding:28px;
-    gap:22px;
-    box-shadow:0 14px 34px rgba(0,0,0,0.08);
-    display:none;
   }
-
-  .nav-toggle:checked + .nav-toggle-label + .nav-links{
-    display:flex;
-  }
-
-  .dropdown{
-    position:static;
-    opacity:1;
-    visibility:visible;
-    transform:none;
-    box-shadow:none;
-    border-top:2px solid var(--primary);
-    padding:12px 0 0 12px;
-    display:none;
-  }
-
-  .has-dropdown:focus-within .dropdown{
-    display:block;
-  }
-
-}
-
-/* =========================
-   7. TYPOGRAPHY REFINEMENT (Lean)
-========================= */
-
-/* Improve heading rhythm */
-h1,
-h2{
-  margin-bottom:18px;
-  letter-spacing:-0.3px;
-  text-align: center;
-}
-
-/* Slightly cleaner H2 sizing */
-h2{
-  font-size:28px;
-}
-
-/* Mobile tightening */
-@media(max-width:768px){
 
   h2{
-    font-size:22px;
+
+    font-size:26px;
+
   }
 
-  .hero h1{
-    font-size:30px;
+  .hero{
+
+    height:70vh;
+
   }
 
-  .hero p{
-    font-size:16px;
+  .nav-links{
+
+    display:none;
+
   }
 
 }
+
 
