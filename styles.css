@@ -493,6 +493,25 @@ font-weight: 600;
 }
 
 
+
+/* =========================================================
+   13. MSIN PSGE SERVICE SELECTOR (Internal Silo Reinforcement)
+========================================================= */
+
+.services-selector{
+  margin-top:40px;
+}
+
+.service-card{
+  display:block;
+  color:var(--text);
+}
+
+.service-card:hover h3{
+  color:var(--primary);
+}
+
+
 /* =========================================================
 
    9. FAQ
