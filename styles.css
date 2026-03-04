@@ -449,6 +449,39 @@ font-weight: 600;
 }
 
 
+
+/* Areas We Cover Page */
+.areas-we-cover h2 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.area-card ul {
+  margin-top: 12px;
+  margin-bottom: 18px;
+  padding-left: 18px;
+}
+
+.area-card ul li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.area-card .internal-links a {
+  color: var(--primary);
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.area-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  transition: 0.3s ease;
+}
+
+
+
 /* =========================================================
 
    8. GRID & CARD SYSTEM (Premium Feel)
@@ -495,7 +528,7 @@ font-weight: 600;
 
 
 /* =========================================================
-   13. MSIN PSGE SERVICE SELECTOR (Internal Silo Reinforcement)
+   13. MAIN PSGE SERVICE SELECTOR (Internal Silo Reinforcement)
 ========================================================= */
 
 .services-selector{
