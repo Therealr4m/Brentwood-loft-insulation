@@ -42,58 +42,87 @@
   </div>
 </section>
 
+
+
 <!-- CONTACT DETAILS -->
-<section class="section section-grey">
+<section class="section section-grey contact-section">
   <div class="container">
-    <h2>Call Us or Send a Message</h2>
+    <h2>Contact Us</h2>
 
     <div class="grid-2">
 
       <!-- CALL CARD -->
-      <div class="card">
+      <div class="card contact-card">
         <h3>Call Us</h3>
         <p>
-          The quickest way to speak with us is by phone. We’re happy to answer questions about insulation depth, costs, materials or booking an assessment.
+          If you’d prefer to speak directly, feel free to call. We’re happy to answer
+          any questions about your property or insulation options.
         </p>
-        <p style="font-size:20px; font-weight:bold;">
+
+        <p class="contact-phone">
           <a href="tel:00000000000">00000 000000</a>
         </p>
-        <p>Available Monday–Saturday.</p>
+
+        <p class="contact-hours">
+          Monday–Saturday
+        </p>
       </div>
 
-      <!-- EMAIL FORM CARD -->
-      <div class="card">
-        <h3>Request a Call Back</h3>
+      <!-- EMAIL CARD -->
+      <div class="card contact-card">
+        <h3>Email Us</h3>
         <p>
-          Prefer us to contact you? Leave your details below and we’ll get back to you promptly.
+          Prefer email? You can message us directly or use the form below.
         </p>
 
-        <form action="your-form-handler.php" method="POST" class="contact-form">
+        <!-- Direct Email Button -->
+        <a href="mailto:youremail@example.com" class="btn contact-btn">
+          Email for a Free Quote
+        </a>
+
+        <!-- Divider -->
+        <hr style="margin:30px 0; border:none; border-top:1px solid rgba(0,0,0,0.06);">
+
+        <!-- Simple Form -->
+        <form 
+          action="mailto:youremail@example.com" 
+          method="POST" 
+          enctype="text/plain"
+          class="contact-form"
+        >
 
           <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" required>
+          <input type="text" id="name" name="Name" required>
 
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" required>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="Email" required>
 
-          <label for="postcode">Postcode</label>
-          <input type="text" id="postcode" name="postcode" required>
+          <label for="message">Message</label>
+          <textarea 
+            id="message" 
+            name="Message" 
+            rows="4" 
+            placeholder="Brief details about your enquiry..."
+            required
+          ></textarea>
 
-          <label for="message">Brief Description</label>
-          <textarea id="message" name="message" rows="4" placeholder="e.g. 1930s semi, unsure insulation depth..." required></textarea>
-
-          <p style="font-size:13px; margin-top:5px;">
-            We respect your privacy. Your details are never shared.
+          <p class="contact-privacy">
+            Your details are kept private and are never shared.
           </p>
 
-          <button type="submit" class="btn">REQUEST A CALL BACK</button>
+          <button type="submit" class="btn contact-btn">
+            Send Message
+          </button>
 
         </form>
+
       </div>
 
     </div>
   </div>
 </section>
+
+
 
 <!-- WHAT HAPPENS NEXT -->
 <section class="section section-light">
