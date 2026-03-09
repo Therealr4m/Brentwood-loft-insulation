@@ -431,6 +431,7 @@ p{
 .section-grey{
 
   background:var(--bg);
+  text-align: center;
 
 }
 
