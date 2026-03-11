@@ -640,16 +640,19 @@ font-weight: 600;
     height:70vh;
   }
 
-  /* NAVIGATION FIX */
-
-  .nav-inner{
-    flex-direction:column;
-    align-items:flex-start;
-    height:auto;
-    padding:16px 0;
-    gap:12px;
+   .nav-inner{
+  height:70px;
   }
 
+.nav-inner{
+  height:70px;
+}
+
+
+
+  /* NAVIGATION FIX */
+
+    
   .logo{
     font-size:18px;
   }
@@ -696,8 +699,6 @@ font-weight: 600;
   }
 
 }
-
-
 
 
 /* =========================================================
