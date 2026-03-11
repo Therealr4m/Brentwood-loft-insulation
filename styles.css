@@ -286,6 +286,46 @@ margin-top:10px;
 }
 
 
+.nav-accordion summary{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.nav-accordion summary::after{
+content:"▾";
+font-size:18px;
+transition:transform 0.25s ease;
+}
+
+.nav-accordion details[open] summary::after{
+transform:rotate(180deg);
+}
+
+
+/* HERO BRAND TEXT LOGO */
+
+.hero-logo{
+position:absolute;
+top:24px;
+left:24px;
+z-index:5;
+}
+
+.hero-logo a{
+font-weight:700;
+font-size:18px;
+color:#ffffff;
+letter-spacing:0.3px;
+}
+
+
+/* MOBILE UX */
+.hero-logo a{
+font-size:16px;
+}
+
+
 /* =========================================================
 
    6. BUTTON SYSTEM
@@ -435,23 +475,6 @@ font-weight: 600;
 }
 
 
-/* =========================================================
-   13. MAIN PSGE SERVICE SELECTOR (Internal Silo Reinforcement)
-========================================================= */
-
-.services-selector{
-  margin-top:40px;
-}
-
-.service-card{
-  display:block;
-  color:var(--text);
-}
-
-.service-card:hover h3{
-  color:var(--primary);
-}
-
 
 /* =========================================================
 
@@ -531,7 +554,6 @@ font-weight: 600;
   font-size:14px;
 
 }
-
 
 
 
