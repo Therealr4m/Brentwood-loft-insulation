@@ -629,23 +629,38 @@ font-weight: 600;
 @media(max-width:768px){
 
   h1{
-  font-size:32px;
-
+    font-size:32px;
   }
 
   h2{
-  font-size:26px;
+    font-size:26px;
   }
 
   .hero{
-  height:70vh;
+    height:70vh;
+  }
+
+  .nav-inner{
+    flex-direction:column;
+    height:auto;
+    padding:20px 0;
   }
 
   .nav-links{
-  display:none;
-
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    width:100%;
+    margin-top:16px;
   }
- }
+
+  .nav-links li{
+    width:100%;
+    text-align:center;
+  }
+
+}
+
 
 
 
