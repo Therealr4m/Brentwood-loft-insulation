@@ -19,8 +19,6 @@
 
   --white:#ffffff;
 
-
-
   --radius:8px;
 
   --shadow-soft:0 10px 30px rgba(0,0,0,0.06);
@@ -57,8 +55,6 @@ body{
   -webkit-font-smoothing:antialiased;
 
 }
-
-
 
 img{
 
@@ -149,7 +145,9 @@ p{
 
   position:relative;
 
-  height:85vh;
+  min-height: clamp(420px, 75vh, 720px);
+
+  padding: 80px 0 60px;
 
   display:flex;
 
@@ -172,6 +170,8 @@ p{
   top:0;
 
   left:0;
+
+   width: 100%;
 
   height:100%;
 
@@ -197,12 +197,10 @@ p{
 
 }
 
-.hero-content{
-
-  max-width:800px;
-
-  padding:0 24px;
-
+  .hero-content{
+  max-width:720px;
+  margin:0 auto;       /* ✅ THIS centers properly */
+  padding:0 20px;
 }
 
 .hero p{
@@ -213,6 +211,18 @@ p{
 
 }
 
+@media (max-width: 768px){
+
+  .hero{
+    padding: 60px 0 40px;
+    align-items: flex-end;   /* ✅ stops awkward vertical centering */
+  }
+
+  .hero-content{
+    padding-bottom: 10px;
+  }
+
+}
 
 
 /* =========================================================
@@ -320,10 +330,7 @@ letter-spacing:0.3px;
 }
 
 
-/* MOBILE UX */
-.hero-logo a{
-font-size:16px;
-}
+
 
 
 /* =========================================================
