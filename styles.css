@@ -90,17 +90,11 @@ ul{
 ========================================================= */
 
 h1{
-
-  font-size:48px;
-
+  font-size: clamp(28px, 4.5vw, 44px);
   font-weight:700;
-
   letter-spacing:-0.5px;
-
-  line-height:1.1;
-
-  margin-bottom:20px;
-
+  line-height:1.15;
+  margin-bottom:18px;
 }
 
 h2{
@@ -203,27 +197,40 @@ p{
   padding:0 20px;
 }
 
+
+.hero h1{
+  max-width: 18ch;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 .hero p{
-
   color:#e5e5e5;
-
   font-size:18px;
 
 }
 
 @media (max-width: 768px){
-
   .hero{
     padding: 60px 0 40px;
     align-items: flex-end;   /* ✅ stops awkward vertical centering */
   }
-
   .hero-content{
     padding-bottom: 10px;
   }
 
+     .hero h1{
+    max-width: 16ch;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
 }
 
+
+ 
 
 /* =========================================================
    5.5 BELOW HERO NAVIGATION (Expandable - No JS)
@@ -316,17 +323,12 @@ transform:rotate(180deg);
 /* HERO BRAND TEXT LOGO */
 
 .hero-logo{
-position:absolute;
-top:24px;
-left:24px;
-z-index:5;
-}
-
-.hero-logo a{
-font-weight:700;
-font-size:18px;
-color:#ffffff;
-letter-spacing:0.3px;
+  position:absolute;
+  top:clamp(16px, 4vw, 28px);
+  left:clamp(16px, 4vw, 28px);
+  z-index:5;
+  font-weight:700;
+  color:#ffffff;
 }
 
 
