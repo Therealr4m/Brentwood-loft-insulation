@@ -392,6 +392,7 @@ transform:rotate(180deg);
 
 .section-light{
   background:var(--white);
+  
 }
 
 .section-grey{
@@ -412,6 +413,33 @@ transform:rotate(180deg);
 .internal-links{
 color: #0000FF;
 font-weight: 600;
+}
+
+/* =========================================================
+   HELPFUL GUIDES
+========================================================= */
+
+.guides-section{
+  text-align:center;
+}
+
+.guides-list{
+  list-style:none;
+  padding:0;
+  margin-top:30px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.guides-list a{
+  color:var(--primary);
+  font-weight:600;
+  font-size:16px;
+}
+
+.guides-list a:hover{
+  text-decoration:underline;
 }
 
 /* Areas We Cover Page */
@@ -444,8 +472,6 @@ font-weight: 600;
   transition: 0.3s ease;
 }
 
-
-
 /* =========================================================
 
    8. GRID & CARD SYSTEM (Premium Feel)
@@ -458,7 +484,6 @@ font-weight: 600;
   gap:5px;
   margin-top:40px;
 }
-
 
 .card{
   background:var(--white);
@@ -484,7 +509,6 @@ font-weight: 600;
 }
 
 
-
 /* =========================================================
 
    9. FAQ
@@ -492,19 +516,14 @@ font-weight: 600;
 ========================================================= */
 
 .faq{
-
   margin-top:40px;
 
 }
 
 .faq-item{
-
   margin-bottom:32px;
-
   padding-bottom:24px;
-
   border-bottom:1px solid rgba(0,0,0,0.08);
-
 }
 
 /* =========================================================
