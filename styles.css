@@ -59,22 +59,16 @@ body{
 img{
 
   width:100%;
-
   display: block;
-
-
-
 }
 
 a{
-
   text-decoration:none;
   color:inherit;
 }
 
 ul{
   padding-left:20px;
-
 }
 
 .container{
@@ -785,4 +779,52 @@ display:block;
 .contact-btn{
   width:100%;
   margin-top:24px;
+}
+
+
+
+/* =========================================
+PROJECT STRIP
+========================================= */
+
+.project-strip{
+padding:34px 20px 8px;
+background:var(--white);
+}
+
+.project-strip-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.project-strip-grid img{
+display:block;
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:var(--radius);
+border:1px solid rgba(0,0,0,.08);
+box-shadow:var(--shadow-soft);
+transition:.22s ease;
+
+}
+
+.project-strip-grid img:hover{
+transform:translateY(-3px);
+box-shadow:var(--shadow-hover);
+}
+
+@media(max-width:768px){
+.project-strip{
+padding:18px 16px 4px;
+}
+
+.project-strip-grid{
+grid-template-columns:1fr;
+gap:14px;
+}
+.project-strip-grid img{
+height:210px;
+}
 }
