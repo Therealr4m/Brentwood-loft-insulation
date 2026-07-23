@@ -607,29 +607,7 @@ font-weight: 600;
 
 }
 
-
-/* =========================================================
-
-   11. FOOTER
-
-========================================================= */
-
-.footer{
-
-  background:#0f0f0f;
-
-  color:#aaa;
-
-  text-align:center;
-
-  padding:30px 0;
-
-  font-size:14px;
-
-}
-
  /* ==== HEADER NAV ==== */ 
-
 .site-header{
 position:sticky;
 top:0;
@@ -827,4 +805,112 @@ gap:14px;
 .project-strip-grid img{
 height:210px;
 }
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+.site-footer{
+  background:#202020;
+  color:#ffffff;
+  margin-top:60px;
+  border-top:4px solid var(--primary);
+}
+
+
+.footer-container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:52px 24px 42px;
+  display:grid;
+  grid-template-columns:
+  1.4fr
+  1fr
+  1fr
+  1.2fr
+  1.5fr;
+  gap:42px;
+}
+
+
+.footer-brand h2{
+  color:#ffffff;
+  font-size:1.2rem;
+  margin-bottom:14px;
+}
+
+
+.footer-brand p{
+  color:#cfcfcf;
+  font-size:.9rem;
+  line-height:1.6;
+  max-width:280px;
+}
+
+
+.footer-column{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+
+.footer-column h3{
+  color:var(--accent);
+  font-size:.95rem;
+  margin-bottom:10px;
+}
+
+
+.footer-column a{
+  color:#d0d0d0;
+  text-decoration:none;
+  font-size:.88rem;
+  line-height:1.5;
+  transition:
+  color .2s ease,
+  transform .2s ease;
+}
+
+.footer-column a:hover{
+  color:#ffffff;
+  transform:translateX(3px);
+}
+
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.12);
+  padding:18px 24px;
+  text-align:center;
+
+}
+
+.footer-bottom p{
+  margin:0;
+  color:#999999;
+  font-size:.8rem;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+@media(max-width:900px){
+  .footer-container{
+    grid-template-columns:
+    repeat(2,1fr);
+    gap:34px 28px;
+  }
+}
+
+
+@media(max-width:600px){
+  .footer-container{
+    grid-template-columns:1fr;
+    padding:42px 22px 34px;
+
+  }
+  .footer-brand p{
+    max-width:100%;
+  }
 }
