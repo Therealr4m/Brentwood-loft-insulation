@@ -1199,7 +1199,6 @@ height:210px;
 }
 
 
-
 /* =====================================================
    FLOATING CALL CTA
 ===================================================== */
@@ -1248,6 +1247,72 @@ height:210px;
 
 
 
+
+/* =====================================================
+   MOBILE FLOATING CALL CTA
+===================================================== */
+@media(max-width:768px){
+
+  .floating-call{
+    position:fixed;
+
+    top:auto;
+
+    left:134px;
+    right:14px;
+    bottom:14px;
+    transform:none;
+    width:auto;
+    max-width:none;
+    min-height:50px;
+    padding:13px 16px;
+    border:1px solid rgba(0,0,0,.08);
+    border-radius:8px;
+    font-size:13px;
+    transition:none;
+    z-index:999;
+  }
+
+
+  .floating-call:hover{
+    left:134px;
+    right:14px;
+    transform:none;
+    box-shadow:var(--shadow-soft);
+  }
+
+
+  .floating-call:active{
+    transform:scale(.98);
+  }
+}
+
+
+/* =====================================================
+   VERY SMALL SCREENS
+===================================================== */
+@media(max-width:380px){
+
+  .floating-call{
+    left:124px;
+    right:12px;
+
+    bottom:12px;
+
+    min-height:46px;
+
+    padding:12px 10px;
+
+    font-size:12px;
+  }
+
+  .floating-call:hover{
+    left:124px;
+    right:12px;
+  }
+}
+
+
 /* =====================================================
    WHATSAPP FLOAT
 ===================================================== */
@@ -1282,24 +1347,20 @@ height:210px;
   transition:
     transform .2s ease,
     box-shadow .2s ease;
-
   z-index:999;
 }
 
-
 /* ICON */
-
 .whatsapp-icon{
   width:20px;
   height:20px;
 
   fill:currentColor;
-
   flex-shrink:0;
 }
 
 
-/* TEXT */
+/* /* TEXT * */
 
 .whatsapp-text{
   display:block;
@@ -1308,7 +1369,6 @@ height:210px;
 
 
 /* HOVER */
-
 .whatsapp-float:hover{
   transform:translateY(-2px);
 
@@ -1342,7 +1402,6 @@ height:210px;
   }
 
 }
-
 
 /* =====================================================
    VERY SMALL SCREENS
